@@ -6,7 +6,6 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'headerMenu' %>
   </head>
 
   <body>
@@ -14,16 +13,17 @@
       <h1 class= "blog_title">くまさんのTech系ブログ</h1>
       <h2 class= "blog_description">基本的には技術で学んだことを書き留めます。雑談もやるかもね！</h2>
       <div id= "menu">
-        <ul class="list">
+        <div class="list">
           <a href="#" v-bind:class="{active:active===listlabel}" @click="dropdown(listlabel)">{{listlabel}}</a>
           <ul v-if="active===listlabel">
             <li v-for="item in sublistlabel" class="sublist-item">
               <a href="#" v-bind:label="item">{{item}}</a>
             </li>
           </ul>
-        </li>
+        </div>
       </ul>
       </div>
+      <%= javascript_pack_tag 'headerMenu' %>
     </header>
     <div class= "content">
       <div id= "article_list">
