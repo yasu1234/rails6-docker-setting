@@ -1,25 +1,21 @@
 import Vue from 'vue/dist/vue.esm'
 // import Header from './components/headerMenu.vue'
 
-// Run Vue after load HTML
-document.addEventListener("DOMContentLoaded", function(event) {
-  var menu = new Vue({
-    el: '#menu',
-    data:{
-      listlabel:"",
-      sublistlabel:[],
-      active:""
-    },
-    methods:{
-      dropdown(list){
+
+new Vue({
+  el: '#menu',
+  data:{
+    listlabel:"メニュー",
+    sublistlabel:["ログイン","サインアウト"],
+    active:""
+  },
+  methods:{
+    dropdown(list){
       console.log(this.active);
-        this.active = this.active===list ? "":list;
-      }
+      this.active = this.active===list ? list:"";
     }
-  });
-  menu.listlabel = "メニュー"
-  menu.sublistlabel = ["ログイン","","Shoes","Goods"]
- });
+  }
+});
 
 
 // The above code uses Vue without the compiler, which means you cannot
