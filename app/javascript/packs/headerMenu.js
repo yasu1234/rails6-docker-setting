@@ -12,7 +12,7 @@ new Vue({
   methods:{
     dropdown(list){
       console.log(this.active);
-      this.active = this.active===list ? list:"";
+      this.active = this.active===list ? "":list;
     }
   }
 });
