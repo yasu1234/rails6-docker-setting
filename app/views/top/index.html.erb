@@ -14,7 +14,7 @@
       <h2 class= "blog_description">基本的には技術で学んだことを書き留めます。雑談もやるかもね！</h2>
       <div id= "menu">
         <div class="list">
-          <a href="#" v-bind:class="{active:active===listlabel}" @click="dropdown(listlabel)">{{listlabel}}</a>
+          <a href="#" v-bind:class="{active:active===listlabel}" @click.prevent.stop="dropdown(listlabel)">{{listlabel}}</a>
           <ul v-if="active===listlabel">
             <li v-for="item in sublistlabel" class="sublist-item">
               <a href="#" v-bind:label="item">{{item}}</a>
