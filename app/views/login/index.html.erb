@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if flash[:alert] %>
+      <div id="notice"><%= flash[:alert] %></div>
+    <% end %>
+    <br>
+    <header id= "blog_header">
+      <h1 class= "blog_title">ユーザーログイン</h1>
+    </header>
+    <%= form_for(@user) do |f| %>
+    <div>
+			<%= f.label :userId, 'ユーザ' %>
+			<%= f.text_field :userId, params[:userId] %>
+		</div>
+		<div>
+			<%= f.label :password, 'パスワード' %>
+			<%= f.password_field :password, params[:password] %>
+    </div>
+    <br>
+		<div>
+			<%= f.submit "ログイン" %>
+		</div>
+    <% end %>
+  </body>
+</html>
