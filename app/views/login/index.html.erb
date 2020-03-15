@@ -1,0 +1,22 @@
+<% if flash[:alert] %>
+  <div id="notice"><%= flash[:alert] %></div>
+<% end %>
+<br>
+<header id= "blog_header">
+  <h1 class= "blog_title">ユーザーログイン</h1>
+</header>
+<%= form_with(model: @users, url: login_url) do |f| %>
+  <div>
+	  <%= f.label :userId, 'ユーザ' %>
+		<%= f.text_field :userId %>
+	</div>
+	<div>
+		<%= f.label :password, 'パスワード' %>
+		<%= f.password_field :password %>
+  </div>
+  <br>
+	<div>
+		<%= f.submit "ログイン" %>
+	</div>
+  <% end %>
+</body>

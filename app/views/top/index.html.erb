@@ -17,7 +17,7 @@
           <a href="#" v-bind:class="{active:active===listlabel}" @click.prevent.stop="dropdown(listlabel)">{{listlabel}}</a>
           <ul v-if="active===listlabel">
             <li v-for="item in sublistlabel" class="sublist-item">
-              <a href="#" v-bind:label="item">{{item}}</a>
+              <a :href="item.url" v-bind:label="item">{{item.name}}</a>
             </li>
           </ul>
         </div>

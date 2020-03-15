@@ -6,7 +6,10 @@ new Vue({
   el: '#menu',
   data:{
     listlabel:"メニュー",
-    sublistlabel:["ログイン","サインアウト"],
+    sublistlabel:[
+      {url:"login", name:"ログイン"},
+      {url:"signout",name:"サインアウト"}
+    ],
     active:""
   },
   methods:{

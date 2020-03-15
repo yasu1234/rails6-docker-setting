@@ -4,4 +4,7 @@ Rails.application.routes.draw do
     root 'top#index'
 
     get'/top' => 'home#index'
+    get'/login' => 'logins#show'
+
+    resource :login
 end
