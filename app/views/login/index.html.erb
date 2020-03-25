@@ -3,20 +3,28 @@
 <% end %>
 <br>
 <header id= "blog_header">
-  <h1 class= "blog_title">ユーザーログイン</h1>
+  <h1 class= "blog_title">管理者ログイン</h1>
 </header>
 <%= form_with(model: @users, url: login_url) do |f| %>
-  <div>
-	  <%= f.label :userId, 'ユーザ' %>
-		<%= f.text_field :userId %>
-	</div>
 	<div>
-		<%= f.label :password, 'パスワード' %>
-		<%= f.password_field :password %>
-  </div>
-  <br>
-	<div>
-		<%= f.submit "ログイン" %>
+		<div class= "label">
+			<%= f.label :userId, 'ユーザ'%><br>
+		</div>
+	  	<div class= "outer">
+		  <%= f.text_field :userId, class: "text", placeholder: "ユーザーIDを入力してください"%>
+      	</div>
 	</div>
-  <% end %>
+	<br>
+	<div>
+		<div class= "label">
+			<%= f.label :password, 'パスワード'%><br>
+		<div class= "outer">
+			<%= f.password_field :password, class: "text", placeholder: "パスワードを入力してください"%>
+		</div>
+	</div>
+    <br>
+	<div class="button_wrapper">
+		<%= f.submit "ログイン", class: "login_button"%>
+	</div>
+<% end %>
 </body>
