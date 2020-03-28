@@ -12,7 +12,7 @@ class LoginsController < ApplicationController
             ＠user = User.find_by(userId: params[:userId])
             if ＠user.userId != "" &&  params[:password] == ＠user.password
                 session[:user_id] = params[:userId]
-                redirect_to login_path and return
+                render "admin/index" and return
             else
                 render "top/index", alert: 'IDもしくはパスワードが違います' and return
             end

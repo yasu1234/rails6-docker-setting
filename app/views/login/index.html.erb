@@ -5,7 +5,7 @@
 <header id= "blog_header">
   <h1 class= "blog_title">管理者ログイン</h1>
 </header>
-<%= form_with(model: @users, url: login_url) do |f| %>
+<%= form_with(model: @users, url: login_url, local: true) do |f| %>
 	<div>
 		<div class= "label">
 			<%= f.label :userId, 'ユーザ'%><br>
