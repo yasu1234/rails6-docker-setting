@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     get'/login' => 'logins#show'
 
     resource :login
+    resources :admin
 end
