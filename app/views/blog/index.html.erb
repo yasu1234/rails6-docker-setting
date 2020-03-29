@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <%= form_with(model: @blog, local: true) do |f| %>
+    <div id= "title" class= "input">
+      <%= f.text_field :title, class: "blog_text", placeholder: "タイトルを入力してください"%>
+    </div>
+    <br>
+    <div id= "tag" class= "input">
+      <%= f.text_field :tag, class: "blog_text", placeholder: "タグを入力してください"%>
+    </div>
+    <br>
+    <div id= "content" class= "input">
+      <%= f.text_field :content, class: "blog_content", placeholder: "本文を入力してください"%>
+    </div>
+    <br>
+    <div class="button_wrapper">
+      <%= f.submit "公開", class: "login_button"%>
+    </div>
+  <% end %>
+  </body>
+</html>
