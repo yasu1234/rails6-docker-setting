@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header id= "blog_header">
+      <h1 class= "blog_title">くまさんのTech系ブログ</h1>
+      <h2 class= "blog_description">基本的には技術で学んだことを書き留めます。雑談もやるかもね！</h2>
+      <div id= "menu">
+        <div class="list">
+          <a href="#" v-bind:class="{active:active===listlabel}" @click.prevent.stop="dropdown(listlabel)">{{listlabel}}</a>
+          <ul v-if="active===listlabel">
+            <li v-for="item in sublistlabel" class="sublist-item">
+              <a :href="item.url" v-bind:label="item">{{item.name}}</a>
+            </li>
+          </ul>
+        </div>
+      </ul>
+      </div>
+      <%= javascript_pack_tag 'headerMenu' %>
+    </header>
+    <div class= "content">
+      <div id= "article_list">
+      </div>
+      <div id= "blog_info">
+        <div class= "useful_content">
+          <div class= "useful_content_title">プロフィール</div>
+          <div>モバイルエンジニア。サーバーサイドもフロントもインフラも大好き。つまり、ただの技術好き野郎です。<br>Twitter：@kumadesu11</div>
+        </div>
+        <div class= "useful_content">
+          <div>検索</div>
+        </div>
+        <div class= "useful_content">
+          <div>ランキング</div>
+        </div>
+        <div class= "useful_content">
+          <div>最新記事</div>
+        </div>
+        <div class= "useful_content">
+          <div>年月別投稿</div>
+        </div>
+        <div class= "useful_content">
+          <div>リンク</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

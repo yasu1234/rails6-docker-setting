@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="menu">
+      <ul>
+        <li></li>
+        <li><a href="#menu01">ダッシュボード</a></li><br>
+        <%= link_to "ブログ投稿", '/blog' %><br>
+        <li><a href="#menu03">投稿済み一覧</a></li><br>
+        <li><a href="#menu04">アクセス解析</a></li><br>
+        <li><a href="#menu05">サインアウト</a></li><br>
+      </ul>
+    </div>
+    <div class="main">
+      <div class="box" id="menu01">
+        <div id= "current_content"></div>
+      </div>
+    </div>
+  </body>
+</html>
